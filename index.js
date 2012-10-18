@@ -16,6 +16,7 @@ module.exports = function (connect) {
 
     SimpleRiakStore.prototype.get = function (sid, callback) {
         this.client.get({ key: sid }, function (err, reply) {
+            if (reply.statusCode === 404) return callback();
             if (err) return callback(err);
             callback(null, reply.data);
         });

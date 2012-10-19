@@ -15,7 +15,8 @@ module.exports = function (connect) {
     SimpleRiakStore.prototype.__proto__ = Store.prototype;
 
     SimpleRiakStore.prototype.get = function (sid, callback) {
-        this.client.get({ key: sid }, function (err, reply) {
+        var encodedSid = encodeURIComponent(sid);
+        this.client.get({ key: encodedSid }, function (err, reply) {
             if (reply.statusCode === 404) return callback();
             if (err) return callback(err);
             callback(null, reply.data);
@@ -23,11 +24,13 @@ module.exports = function (connect) {
     };
 
     SimpleRiakStore.prototype.set = function (sid, session, callback) {
-        this.client.set({ key: sid, data: session }, callback);
+        var encodedSid = encodeURIComponent(sid);
+        this.client.set({ key: encodedSid, data: session }, callback);
     };
 
     SimpleRiakStore.prototype.destroy = function (sid, callback) {
-        this.client.del({ key: sid }, callback);
+        var encodedSid = encodeURIComponent(sid);
+        this.client.del({ key: encodedSid }, callback);
     };
 
     return SimpleRiakStore;

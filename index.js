@@ -25,7 +25,7 @@ module.exports = function (connect) {
 
     SimpleRiakStore.prototype.set = function (sid, session, callback) {
         var encodedSid = encodeURIComponent(sid);
-        this.client.set({ key: encodedSid, data: session }, callback);
+        this.client.put({ key: encodedSid, data: session }, callback);
     };
 
     SimpleRiakStore.prototype.destroy = function (sid, callback) {

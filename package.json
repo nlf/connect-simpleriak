@@ -16,6 +16,6 @@
   "author": "Nathan <quitlahok@gmail.com> (https://github.com/nathan-lafreniere)",
   "license": "MIT",
   "dependencies": {
-    "simpleriak": "0.0.12"
+    "simpleriak": "~0.1.x"
   }
 }

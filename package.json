@@ -1,11 +1,11 @@
 {
   "name": "connect-simpleriak",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simpleriak based session middleware for connect",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com:nathan-lafreniere/connect-simpleriak.git"
+    "url": "git://github.com:nlf/connect-simpleriak.git"
   },
   "keywords": [
     "riak",
@@ -13,7 +13,7 @@
     "express",
     "connect"
   ],
-  "author": "Nathan <quitlahok@gmail.com> (https://github.com/nathan-lafreniere)",
+  "author": "Nathan <quitlahok@gmail.com> (https://github.com/nlf)",
   "license": "MIT",
   "dependencies": {
     "simpleriak": "~0.1.x"
